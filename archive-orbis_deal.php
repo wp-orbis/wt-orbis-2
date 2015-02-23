@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <header class="section-header clearfix">
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+	<a class="btn btn-primary pull-right" href="<?php echo esc_url( orbis_get_url_post_new() ); ?>">
 		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add deal', 'orbis' ); ?>
 	</a>
 </header>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <header class="section-header clearfix">
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+	<a class="btn btn-primary pull-right" href="<?php echo esc_url( orbis_get_url_post_new() ); ?>">
 		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add person', 'orbis' ); ?>
 	</a>
 </header>
@@ -45,13 +45,13 @@
 										<p>
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
-												<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
+												<span class="entry-meta"><?php echo esc_html( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ); ?></span> <br />
 
 											<?php endif; ?>
 
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 
-												<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
+												<span class="entry-meta"><?php echo esc_html( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ); ?></span>
 
 											<?php endif; ?>
 										</p>

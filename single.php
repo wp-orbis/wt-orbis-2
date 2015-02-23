@@ -41,10 +41,10 @@
 					<div class="content">
 						<dl>
 							<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
-							<dd><?php echo get_the_date(); ?></dd>
+							<dd><?php echo esc_html( get_the_date() ); ?></dd>
 
 							<dt><?php _e( 'Posted by', 'orbis' ); ?></dt>
-							<dd><?php echo get_the_author(); ?></dd>
+							<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
 							<dt><?php _e( 'Actions', 'orbis' ); ?></dt>
 							<dd><?php edit_post_link( __( 'Edit', 'orbis' ) ); ?></dd>

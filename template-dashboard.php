@@ -12,7 +12,7 @@ get_header(); ?>
 	<div class="dashboard-loader">
 		<?php _e( 'Loading...', 'orbis' ); ?>
 	</div>
-	
+
 	<div id="dashboard-content-holder">
 		<?php if ( is_active_sidebar( 'dashboard-sidebar' ) ) : ?>
 

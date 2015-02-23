@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <header class="section-header clearfix">
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">	
+	<a class="btn btn-primary pull-right" href="<?php echo esc_url( orbis_get_url_post_new() ); ?>">	
 		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add project', 'orbis' ); ?>
 	</a>
 </header>
@@ -26,11 +26,11 @@
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
-								<?php 
+								<?php
 
 								if ( function_exists( 'orbis_project_has_principal' ) ) {
 									if ( orbis_project_has_principal() ) {
-										printf( 
+										printf(
 											'<a href="%s">%s</a>',
 											esc_attr( orbis_project_principal_get_permalink() ),
 											orbis_project_principel_get_the_name()

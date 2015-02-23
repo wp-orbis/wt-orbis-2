@@ -244,8 +244,8 @@ function orbis_get_title() {
 function orbis_load_css() {
 	$style = '';
 	$style .= '<style type="text/css" media="screen">';
-	$style .= 'a, .btn-default { color: ' . get_option( 'orbis_primary_color' ) . '; }';
-	$style .= '.btn-default, .btn-primary, .panel.panel-featured { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
+	$style .= 'a { color: ' . get_option( 'orbis_primary_color' ) . '; }';
+	$style .= '.btn-primary, .panel.panel-featured { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.btn-primary { background-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.btn-primary:hover, .btn-primary:focus, .btn-primary:active { background-color: ' . get_option( 'orbis_primary_color' ) . '; border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.primary-nav > ul > li.active > a, .primary-nav > ul > li.current-menu-item > a, .primary-nav > ul > li.current-url-ancestor > a, .primary-nav > ul > li.current-menu-parent > a { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';

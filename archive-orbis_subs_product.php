@@ -45,13 +45,13 @@
 								if ( empty( $price ) ) {
 									echo '&mdash;';
 								} else {
-									echo orbis_price( $price );
+									echo esc_html( orbis_price( $price ) );
 								}
 
 								?>
 							</td>
 							<td>
-								<?php 
+								<?php
 
 								$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_cost_price', true );
 
@@ -71,7 +71,7 @@
 								</div>
 							</td>
 						</tr>
-	
+
 					<?php endwhile; ?>
 				</tbody>
 			</table>

@@ -4,7 +4,6 @@
 		<p class="nopassword">
 			<?php _e( 'This post is password protected. Enter the password to view any comments.', 'orbis' ); ?>
 		</p>
-
 	</div>
 
 	<?php return; endif; ?>
@@ -51,7 +50,7 @@
 		'title_reply'         => '<h4>' . __( 'Give a comment', 'orbis' ) . '</h4>',
 		'comment_notes_after' => '',
 		'logged_in_as'        => '',
-		'comment_field'       => '<textarea id="comment" rows="10" name="comment" aria-required="true"></textarea>'
+		'comment_field'       => '<textarea id="comment" rows="10" name="comment" aria-required="true"></textarea>',
 	);
 
 	comment_form( $comments_args );
