@@ -39,15 +39,25 @@ module.exports = function( grunt ) {
 				]
 			}
 		},
-		
+
+		// Sass
+		sass: {
+			dev: {
+				options: {
+					sourcemap: 'none',
+					style: 'expanded',
+					noCache: true,
+				},
+				files: {
+					'assets/orbis/css/orbis.css': 'src/sass/orbis.scss',
+				}
+			},
+		},
+
 		// Concat
 		concat: {
-			css: {
-				src: [ 'src/orbis/css/orbis.css' ],
-				dest: 'assets/orbis/css/orbis.css'
-			},
 			js: {
-				src: [ 'src/orbis/js/orbis.js' ],
+				src: [ 'src/js/orbis.js' ],
 				dest: 'assets/orbis/js/orbis.js'
 			}
 		},
@@ -76,7 +86,7 @@ module.exports = function( grunt ) {
 				files: [
 					{ // Orbis
 						expand: true,
-						cwd: 'src/orbis/images',
+						cwd: 'src/images',
 						src: [ '**/*.{png,jpg,gif}' ],
 						dest: 'assets/orbis/images'
 					}
@@ -88,12 +98,13 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-phplint' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'copy', 'concat', 'cssmin', 'uglify', 'imagemin' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'imagemin' ] );
 	grunt.registerTask( 'pot', [ 'makepot' ] );
 };

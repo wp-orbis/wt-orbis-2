@@ -1,0 +1,7 @@
+// Print
+@media print {
+	.site-header,
+	.site-footer {
+		display: none !important;
+	}
+}

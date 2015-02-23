@@ -36,7 +36,7 @@ function orbis_setup() {
 	load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
 
 	/* Editor style */
-	add_editor_style();
+	add_editor_style( 'assets/orbis/css/editor-style.css' );
 
 	/* Add theme support */
 	add_theme_support( 'post-thumbnails' );
@@ -207,7 +207,7 @@ add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );
 function orbis_get_title() {
 	if ( is_front_page() ) {
 		return __( 'Dashboard', 'orbis' );
-	
+
 	} elseif ( is_home() ) {
 		return __( 'News', 'orbis' );
 
@@ -219,7 +219,7 @@ function orbis_get_title() {
 
 	} elseif ( is_tag() ) {
 		return single_tag_title( '', false );
-	
+
 	} elseif ( is_author() ) {
 		return get_the_author();
 
@@ -233,7 +233,7 @@ function orbis_get_title() {
 		return __( '404 - Page not found', 'orbis' );
 
 	} else {
-		return __( 'Dude, what is this?', 'orbis' );
+		return __( 'Unknown', 'orbis' );
 
 	}
 }
