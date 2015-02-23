@@ -26,6 +26,18 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// PHP Code Sniffer
+		phpcs: {
+			application: {
+				dir: [ './' ],
+			},
+			options: {
+				standard: 'phpcs.ruleset.xml',
+				extensions: 'php',
+				ignore: 'node_modules,assets'
+			}
+		},
+
 		// Copy
 		copy: {
 			main: {
@@ -95,6 +107,7 @@ module.exports = function( grunt ) {
 		}
 	} );
 
+	grunt.loadNpmTasks( 'grunt-phpcs' );
 	grunt.loadNpmTasks( 'grunt-phplint' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
@@ -106,5 +119,6 @@ module.exports = function( grunt ) {
 
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'imagemin' ] );
+	grunt.registerTask( 'build', [ 'phpcs' ] );
 	grunt.registerTask( 'pot', [ 'makepot' ] );
 };
