@@ -16,7 +16,7 @@ $orderbys = array(
 <div class="pull-right">
 	<select name="orderby" class="form-control">
 		<?php 
-		
+
 		foreach ( $orderbys as $orderby => $label ) {
 			printf(
 				'<option value="%s" %s>%s</option>',
@@ -25,9 +25,8 @@ $orderbys = array(
 				esc_html( $label )
 			);
 		}
-		
+
 		?>
-		
 	</select>
 
 	<button class="btn btn-default" type="submit"><?php _ex( 'Order', 'sorting', 'orbis' ); ?></button>

@@ -3,7 +3,7 @@
 $query = new WP_Query( array(
 	'post_type'               => 'orbis_project',
 	'posts_per_page'          => 25,
-	'orbis_project_client_id' => get_the_ID()
+	'orbis_project_client_id' => get_the_ID(),
 ) );
 
 if ( $query->have_posts() ) : ?>
@@ -19,24 +19,28 @@ if ( $query->have_posts() ) : ?>
 
 			<tbody>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			
+
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
 							<?php if ( get_comments_number() != 0  ) : ?>
-					
+
 								<div class="comments-number">
 									<span class="glyphicon glyphicon-comment"></span>
 									<?php comments_number( '0', '1', '%' ); ?>
 								</div>
-					
+
 							<?php endif; ?>
 						</td>
 						<td class="project-time">
-							<?php if ( function_exists( 'orbis_project_the_time' ) ) orbis_project_the_time(); ?>
+							<?php 
 
-							<?php if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
+							if ( function_exists( 'orbis_project_the_time' ) ) {
+								orbis_project_the_time();
+							}
+
+							if ( function_exists( 'orbis_project_the_logged_time' ) ) : ?>
 
 								<?php 
 
@@ -50,7 +54,7 @@ if ( $query->have_posts() ) : ?>
 							<?php endif; ?>
 						</td>
 					</tr>
-			
+
 				<?php endwhile; ?>
 			</tbody>
 		</table>

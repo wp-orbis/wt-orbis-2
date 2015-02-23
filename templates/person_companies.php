@@ -8,7 +8,7 @@
 	$query = new WP_Query( array(
 	  'connected_type'  => 'orbis_persons_to_companies',
 	  'connected_items' => get_queried_object(),
-	  'nopaging'        => true
+	  'nopaging'        => true,
 	) );
 
 	if ( $query->have_posts() ) : ?>
@@ -18,7 +18,7 @@
 
 				<li>
 					<?php if ( get_post_meta( get_the_ID(), '_orbis_company_website', true ) ) : ?>
-				
+
 						<?php $favicon_url = add_query_arg( 'domain', get_post_meta( get_the_ID(), '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
 
 					<?php endif; ?>

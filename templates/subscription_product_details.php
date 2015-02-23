@@ -8,9 +8,9 @@
 			<dt><?php _e( 'Price', 'orbis' ); ?></dt>
 			<dd>
 				<?php 
-				
+
 				$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_price', true );
-				
+
 				if ( empty( $price ) ) {
 					echo '&mdash;';
 				} else {
@@ -23,9 +23,9 @@
 			<dt><?php _e( 'Cost Price', 'orbis' ); ?></dt>
 			<dd>
 				<?php 
-				
+
 				$price = get_post_meta( get_the_ID(), '_orbis_subscription_product_cost_price', true );
-				
+
 				if ( empty( $price ) ) {
 					echo '&mdash;';
 				} else {

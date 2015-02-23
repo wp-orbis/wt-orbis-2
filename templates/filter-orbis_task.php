@@ -5,7 +5,7 @@
 		'name'             => 'orbis_task_assignee',
 		'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
 		'show_option_none' => __( '&mdash; Select Assignee &mdash;', 'orbis' ),
-		'class'            => 'form-control'
+		'class'            => 'form-control',
 	) );
 
 	?>

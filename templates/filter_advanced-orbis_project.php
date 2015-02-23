@@ -10,8 +10,8 @@ $is_advanced    = ! empty( $principal ) || ! empty( $invoice_number );
 	<fieldset>
 		<legend><?php _e( 'Advanced Search', 'orbis' ); ?></legend>
 
-  					<div class="form-group">
-						<label for="orbis_project_principal"><?php _e( 'Client', 'orbis' ); ?></label>
+  		<div class="form-group">
+			<label for="orbis_project_principal"><?php _e( 'Client', 'orbis' ); ?></label>
 			<input id="orbis_project_principal" class="form-control" name="orbis_project_principal" value="<?php echo esc_attr( $principal ); ?>" type="text" placeholder="<?php _e( 'Search on Client', 'orbis' ); ?>">
 		</div>
 

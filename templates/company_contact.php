@@ -25,27 +25,27 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 
 				<dt><?php _e( 'Address', 'orbis' ); ?></dt>
 				<dd>
-					<?php echo $address; ?><br />
-					<?php echo $postcode, ' ', $city; ?><br />
-					<?php echo $country; ?>
+					<?php echo esc_html( $address ); ?><br />
+					<?php echo esc_html( $postcode, ' ', $city ); ?><br />
+					<?php echo esc_html( $country ); ?>
 				</dd>
-			
+
 			<?php endif; ?>
 
 			<?php if ( ! empty( $website ) ) : ?>
 
 				<dt><?php _e( 'Website', 'orbis' ); ?></dt>
 				<dd>
-					<a href="<?php echo esc_attr( $website ); ?>" target="_blank"><?php echo $website; ?></a>
+					<a href="<?php echo esc_attr( $website ); ?>" target="_blank"><?php echo esc_html( $website ); ?></a>
 				</dd>
 
 			<?php endif; ?>
 
 			<?php if ( ! empty( $email ) ) : ?>
-	
+
 				<dt><?php _e( 'E-Mail', 'orbis' ); ?></dt>
 				<dd>
-					<a href="mailto:<?php echo esc_attr( $email ); ?>" target="_blank"><?php echo $email; ?></a>
+					<a href="mailto:<?php echo esc_attr( $email ); ?>" target="_blank"><?php echo esc_html( $email ); ?></a>
 				</dd>
 
 			<?php endif; ?>
@@ -54,20 +54,20 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 
 				<dt><?php _e( 'Electronic billing', 'orbis' ); ?></dt>
 				<dd><?php echo $ebilling ? __( 'Yes', 'orbis' ) :  __( 'No', 'orbis' ); ?></dd>
-			
+
 			<?php endif; ?>
 
 			<?php if ( ! empty( $kvk_number ) ) : ?>
-	
+
 				<dt><?php _e( 'KvK Number', 'orbis' ); ?></dt>
 				<dd>
-					<?php echo $kvk_number; ?>
-					
+					<?php echo esc_html( $kvk_number ); ?>
+
 					<?php 
-					
+
 					$url_open_kvk = sprintf( 'http://openkvk.nl/%s', $kvk_number );
 					$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://zoeken.kvk.nl/search.ashx' );
-					
+
 					?>
 					<small>
 						<a class="label label-info" href="<?php echo esc_attr( $url_open_kvk ); ?>" target="_blank">openkvk.nl</a>
