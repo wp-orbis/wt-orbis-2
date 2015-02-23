@@ -16,6 +16,8 @@
 				<thead>
 					<tr>
 						<th><?php _e( 'Name', 'orbis' ); ?></th>
+						<th><?php _e( 'Address', 'orbis' ); ?></th>
+						<th><?php _e( 'Online', 'orbis' ); ?></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -42,6 +44,40 @@
 									</div>
 
 								<?php endif; ?>
+							</td>
+							<td>
+								<?php
+
+								$address  = get_post_meta( $post->ID, '_orbis_company_address', true );
+								$postcode = get_post_meta( $post->ID, '_orbis_company_postcode', true );
+								$city     = get_post_meta( $post->ID, '_orbis_company_city', true );
+
+								printf( '%s<br />%s %s', $address, $postcode, $city );
+
+								?>
+							</td>
+							<td>
+								<?php
+
+								$break = '';
+
+								$website = get_post_meta( $post->ID, '_orbis_company_website', true );
+
+								if ( ! empty( $website ) ) {
+									printf( '<a href="%s" target="_blank">%s</a>', $website, $website );
+
+									$break = '<br />';
+								}
+
+								$email = get_post_meta( $post->ID, '_orbis_company_email', true );
+
+								if ( ! empty( $email ) ) {
+									printf( $break );
+
+									printf( '<a href="mailto:%s" target="_blank">%s</a>', $email, $email );
+								}
+
+								?>
 							</td>
 							<td>
 								<div class="actions">
