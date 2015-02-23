@@ -95,6 +95,8 @@
 
 				<?php endif; ?>
 
+				<?php get_template_part( 'templates/company_twitter' ); ?>
+
 				<div class="panel">
 					<header>
 						<h3><?php _e( 'Additional Information', 'orbis' ); ?></h3>
