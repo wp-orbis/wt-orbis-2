@@ -267,8 +267,12 @@ img {
   height: auto;
 }
 
-/* Intro
-------------------------- */
+/* -----------------------------------------
+   Elements
+----------------------------------------- */
+/**
+ * Hero
+ */
 .hero-unit {
   border: 1px solid #ddd;
 }
@@ -291,8 +295,9 @@ img {
   margin: 5px 0;
 }
 
-/* Panel
-------------------------- */
+/**
+ * Panel
+ */
 .panel {
   background: #fff;
   border: none;
@@ -349,8 +354,9 @@ header.with-tabs .nav-tabs > .active > a:hover {
   border-color: #c3c3c3 #c3c3c3 #fff;
 }
 
-/* List
-------------------------- */
+/**
+ * Lists
+ */
 ul.list,
 ul.post-list {
   margin: 0;
@@ -434,8 +440,9 @@ ul.comments li .comment-content {
   line-height: 18px;
 }
 
-/* Activities
-------------------------- */
+/**
+ * Activities
+ */
 .panel.activities {
   font-size: 12px;
   min-height: 400px;
@@ -465,8 +472,9 @@ ul.comments li .comment-content {
   line-height: 36px;
 }
 
-/* Persons
-------------------------- */
+/**
+ * Persons
+ */
 ul.list.persons li {
   padding: 10px;
 }
@@ -498,8 +506,9 @@ ul.list.persons li .person-wrapper a,
   vertical-align: top;
 }
 
-/* Search
-------------------------- */
+/**
+ * Search
+ */
 #advanced-search fieldset {
   margin-top: 20px;
 }
@@ -514,8 +523,9 @@ ul.list.persons li .person-wrapper a,
   color: #666;
 }
 
-/* News
-------------------------- */
+/**
+ * News
+ */
 .news img {
   margin-bottom: 10px;
 }
@@ -524,8 +534,9 @@ ul.list.persons li .person-wrapper a,
   margin-top: 0;
 }
 
-/* Stats
-------------------------- */
+/**
+ * Stats
+ */
 .stats {
   text-align: center;
 }
@@ -536,8 +547,9 @@ ul.list.persons li .person-wrapper a,
   font-weight: bold;
 }
 
-/* Posts
-------------------------- */
+/* -----------------------------------------
+   Posts
+----------------------------------------- */
 .archive .post,
 .blog .post {
   border-bottom: 1px solid #ddd;
@@ -635,8 +647,9 @@ table tr.canceled {
   text-decoration: line-through;
 }
 
-/* Well
-------------------------- */
+/**
+ * Well
+ */
 .panel .well {
   background: #fafafa;
   border: none;
@@ -651,8 +664,9 @@ table tr.canceled {
   margin: 0;
 }
 
-/* Form
-------------------------- */
+/**
+ * Form
+ */
 .form-footer {
   margin-top: 10px;
 }
@@ -671,8 +685,9 @@ table tr.canceled {
   width: 100%;
 }
 
-/* Page header
-------------------------- */
+/**
+ * Page header
+ */
 .page-header {
   background: #fff;
   border-color: #ddd;
@@ -723,8 +738,9 @@ table tr.canceled {
   margin-bottom: 20px;
 }
 
-/* Single
-------------------------- */
+/**
+ * Single
+ */
 p.project-time {
   font-size: 36px;
   line-height: 42px;
@@ -735,8 +751,9 @@ p.project-time span {
   font-size: 12px;
 }
 
-/* Comments
-------------------------- */
+/**
+ * Comments
+ */
 .comments-number {
   color: #bbb;
   display: inline-block;
@@ -953,8 +970,9 @@ p.subscribe-to-comments label {
   display: inline;
 }
 
-/* Social
-------------------------- */
+/**
+ * Social icons
+ */
 ul.social {
   margin: 5px 0 0 0;
   padding: 0;
@@ -995,8 +1013,9 @@ ul.social li.linkedin a {
   background: #0177b5;
 }
 
-/* Footer
-------------------------- */
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
 #footer {
   color: #999;
   font-size: 11px;
@@ -1018,22 +1037,19 @@ ul.social li.linkedin a {
   clear: left;
 }
 
-/* Dashboard
-------------------------- */
 .page-template-template-dashboard-php {
   background: #000;
-  padding-top: 0;
 }
 
-.page-template-template-dashboard-php .container {
-  max-width: 1620px;
-  width: auto;
-}
-
+.page-template-template-dashboard-php .sidebar-wrapper,
+.page-template-template-dashboard-php .page-header,
 .page-template-template-dashboard-php #footer,
-.page-template-template-dashboard-php .navbar,
 .page-template-template-dashboard-php #wpadminbar {
   display: none;
+}
+
+.page-template-template-dashboard-php .main-wrapper {
+  margin-left: 0;
 }
 
 .page-template-template-dashboard-php .panel {
