@@ -4,7 +4,7 @@
  * Navigation icons
  */
 function orbis_nav_menu_icons( $classes, $item, $args ) {
-	$fa = 'fa-edit';
+	$fa = 'fa-file-o';
 
 	foreach( $classes as $class ) {
 		$icon = strpos( $class, 'icon-' );
