@@ -34,6 +34,7 @@
 					wp_nav_menu( array(
 						'container'      => false,
 						'theme_location' => 'primary',
+						'depth'          => 2,
 						'fallback_cb'    => '',
 					) );
 
