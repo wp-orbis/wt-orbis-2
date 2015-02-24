@@ -170,6 +170,12 @@ body.admin-bar .sidebar-wrapper {
 	background: #333;
 
 	display: none;
+
+	padding: 5px 0;
+}
+
+.primary-nav .sub-menu a {
+	padding: 5px 16px;
 }
 
 .primary-nav li.active .sub-menu,

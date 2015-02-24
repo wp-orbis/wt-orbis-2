@@ -141,6 +141,11 @@ body.admin-bar .sidebar-wrapper {
 .primary-nav .sub-menu {
   background: #333;
   display: none;
+  padding: 5px 0;
+}
+
+.primary-nav .sub-menu a {
+  padding: 5px 16px;
 }
 
 .primary-nav li.active .sub-menu,
