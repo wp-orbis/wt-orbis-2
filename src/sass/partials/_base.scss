@@ -1150,8 +1150,9 @@ ul.social li.linkedin a { background: #0177b5; }
 	text-align: center;
 }
 
-/* Clear grid
-------------------------- */
+/**
+ * Clears
+ */
 .row .col-md-6:nth-child(2n + 3) {
 	clear: left;
 }
@@ -1162,4 +1163,11 @@ ul.social li.linkedin a { background: #0177b5; }
 
 .row .col-md-3:nth-child(4n + 5) {
 	clear: left;
+}
+
+/**
+ * Twitter
+ */
+.twitter-timeline {
+	width: 100% !important;
 }

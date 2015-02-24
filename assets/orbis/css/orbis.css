@@ -1023,8 +1023,9 @@ ul.social li.linkedin a {
   text-align: center;
 }
 
-/* Clear grid
-------------------------- */
+/**
+ * Clears
+ */
 .row .col-md-6:nth-child(2n + 3) {
   clear: left;
 }
@@ -1037,6 +1038,16 @@ ul.social li.linkedin a {
   clear: left;
 }
 
+/**
+ * Twitter
+ */
+.twitter-timeline {
+  width: 100% !important;
+}
+
+/* -----------------------------------------
+   Dashboard
+----------------------------------------- */
 .page-template-template-dashboard-php {
   background: #000;
 }
