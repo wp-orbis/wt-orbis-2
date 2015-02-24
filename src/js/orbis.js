@@ -8,6 +8,13 @@
 			}, 20 );
 		} );
 
+		// Primary navigation
+		$( '.primary-nav > ul > li.menu-item-has-children > a' ).click( function( e ) {
+			e.preventDefault();
+
+			$( this ).closest( 'li' ).toggleClass( 'active' );
+		} );
+
     	// Tabs
 		$( '#tabs a' ).click( function( e ) {
 			e.preventDefault();
