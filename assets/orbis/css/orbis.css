@@ -148,7 +148,6 @@ body.admin-bar .sidebar-wrapper {
   padding: 5px 16px;
 }
 
-.primary-nav li.active .sub-menu,
 .primary-nav li.current-menu-parent .sub-menu {
   display: block;
 }

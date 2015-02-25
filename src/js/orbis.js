@@ -13,6 +13,8 @@
 			e.preventDefault();
 
 			$( this ).closest( 'li' ).toggleClass( 'active' );
+
+			$( this ).next( '.sub-menu' ).toggle();
 		} );
 
     	// Tabs
