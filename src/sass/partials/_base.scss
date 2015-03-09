@@ -13,12 +13,14 @@ body {
 .sidebar-wrapper {
     background: #222;
 
+	overflow-y: scroll;
+
     position: fixed;
     bottom: 0;
     top: 0;
     left: 0;
 
-    width: 250px;
+    width: 230px;
 }
 
 body.admin-bar .sidebar-wrapper {
@@ -32,7 +34,7 @@ body.admin-bar .sidebar-wrapper {
 }
 
 .main-wrapper {
-	margin-left: 250px;
+	margin-left: 230px;
 }
 
 .main-content {
@@ -59,6 +61,18 @@ body.admin-bar .sidebar-wrapper {
 	outline: none;
 
 	text-decoration: none;
+}
+
+.mobile-menu .sidebar-wrapper {
+	width: 70px;
+}
+
+.mobile-menu .main-wrapper {
+	margin-left: 70px;
+}
+
+.mobile-menu .site-title {
+	padding: 0;
 }
 
 @media only screen and (max-width: 782px) {
@@ -186,7 +200,27 @@ body.admin-bar .sidebar-wrapper {
 	display: none;
 }
 
+.mobile-menu .primary-nav h3,
+.mobile-menu .primary-nav .nav-label,
+.mobile-menu .site-title {
+	display: none;
+}
+
+.mobile-menu .primary-nav a i.fa {
+	font-size: 26px;
+	
+	margin: 0;
+}
+
+a.toggle-nav {
+	cursor: pointer;
+}
+
 @media only screen and (max-width: 782px) {
+	a.toggle-nav {
+		display: none;	
+	}
+
 	.primary-nav h3,
 	.primary-nav .nav-label,
 	.site-title {
@@ -194,7 +228,7 @@ body.admin-bar .sidebar-wrapper {
 	}
 
 	.primary-nav a i.fa {
-		font-size: 28px;
+		font-size: 26px;
 	
 		margin: 0;
 	}

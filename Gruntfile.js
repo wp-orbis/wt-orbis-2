@@ -118,7 +118,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'imagemin' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
 	grunt.registerTask( 'build', [ 'phpcs' ] );
 	grunt.registerTask( 'pot', [ 'makepot' ] );
 };
