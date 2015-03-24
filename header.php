@@ -40,7 +40,7 @@
 
 					?>
 
-					<a class="toggle-nav"><i class="fa fa-chevron-circle-left"></i> <span class="nav-label"><?php _e( 'Collapse menu', 'orbis' ); ?></span></a>
+					<a class="toggle-nav"><span class="nav-label"><?php _e( 'Collapse menu', 'orbis' ); ?></span></a>
 				</div>
 			</div>
 
