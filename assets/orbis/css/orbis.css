@@ -40,16 +40,17 @@ body.admin-bar .sidebar-wrapper {
 
 .site-title {
   background: #000;
-  color: #fff;
   font-size: 26px;
   padding: 18px;
   text-align: center;
 }
 
-.site-title:hover,
-.site-title:focus,
-.site-title:active {
+.site-title a,
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:active {
   color: #fff;
+  display: block;
   outline: none;
   text-decoration: none;
 }

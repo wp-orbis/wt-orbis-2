@@ -23,7 +23,17 @@
 		<div class="page-wrapper">
 			<div class="sidebar-wrapper">
 				<div class="site-title">
-					<a class="site-title" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<?php if ( get_theme_mod( 'orbis_logo' ) ) : ?>
+
+							<img src="<?php echo esc_url( get_theme_mod( 'orbis_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+
+						<?php else : ?>
+
+							<?php bloginfo( 'name' ); ?>
+
+						<?php endif; ?>
+					</a>
 				</div>
 
 				<div class="primary-nav" role="navigation">

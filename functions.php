@@ -255,3 +255,14 @@ function orbis_load_css() {
 }
 
 add_action( 'wp_head', 'orbis_load_css' );
+
+/**
+ * Support SVG uploads
+ */
+function orbis_allowed_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_filter( 'upload_mimes', 'orbis_allowed_mime_types' );
