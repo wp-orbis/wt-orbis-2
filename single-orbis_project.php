@@ -120,6 +120,16 @@
 
 								<?php endif; ?>
 
+								<?php if ( orbis_project_is_invoicable() ) : ?>
+
+									<span class="label label-success"><?php _e( 'Invoicable', 'orbis' ); ?></span>
+
+								<?php else : ?>
+
+									<span class="label label-default"><?php _e( 'Not invoicable', 'orbis' ); ?></span>
+
+								<?php endif; ?>
+
 							<?php endif; ?>
 						</dd>
 
