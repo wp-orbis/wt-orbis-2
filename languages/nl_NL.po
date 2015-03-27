@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-03-24 10:19:35+00:00\n"
-"PO-Revision-Date: 2015-03-24 11:22+0100\n"
+"POT-Creation-Date: 2015-03-27 14:26:20+00:00\n"
+"PO-Revision-Date: 2015-03-27 15:27+0100\n"
 "Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "MIME-Version: 1.0\n"
@@ -294,7 +294,7 @@ msgid "Dashboard"
 msgstr "Dashboard"
 
 #: functions.php:230
-#: header.php:72
+#: header.php:82
 #: templates/filter_advanced-orbis_project.php:28
 #: templates/search_form.php:18
 #: templates/search_form.php:19
@@ -310,23 +310,23 @@ msgstr "404 - Pagina niet gevonden"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: header.php:30
+#: header.php:40
 msgid "Menu"
 msgstr "Menu"
 
-#: header.php:43
+#: header.php:53
 msgid "Collapse menu"
 msgstr "Menu invouwen"
 
-#: header.php:60
+#: header.php:70
 msgid "Help"
 msgstr "Help"
 
-#: header.php:61
+#: header.php:71
 msgid "Edit profile"
 msgstr "Wijzig profiel"
 
-#: header.php:63
+#: header.php:73
 msgid "Log out"
 msgstr "Uitloggen"
 
@@ -334,34 +334,26 @@ msgstr "Uitloggen"
 msgid "Add post"
 msgstr "Bericht toevoegen"
 
-#: includes/customizer.php:31
+#: includes/customizer.php:12
 msgid "General"
 msgstr "Algemeen"
 
-#: includes/customizer.php:39
-msgid "Slogan"
-msgstr "Slogan"
-
-#: includes/customizer.php:46
+#: includes/customizer.php:22
 msgid "Logo"
 msgstr "Logo"
 
-#: includes/customizer.php:53
-msgid "Logo (SVG)"
-msgstr "Logo (SVG)"
-
-#: includes/customizer.php:66
-msgid "Primary Color"
+#: includes/customizer.php:35
+msgid "Primary color"
 msgstr "Primaire kleur"
 
-#: includes/customizer.php:72
-msgid "Secondary Color"
+#: includes/customizer.php:41
+msgid "Secondary color"
 msgstr "Secundarie kleur"
 
 #: includes/functions.php:9
 #: single-orbis_company.php:114
 #: single-orbis_person.php:134
-#: single-orbis_project.php:154
+#: single-orbis_project.php:164
 #: single-orbis_task.php:59
 #: single.php:50
 msgid "Edit"
@@ -433,7 +425,7 @@ msgid "<span class=\"entry-meta\">Posted by %1$s on %2$s</span>"
 msgstr "<span class=\"entry-meta\">Geplaatst in %1$s op %2$s</span>"
 
 #: includes/widgets/orbis-widget-comments.php:121
-#: includes/widgets/orbis-widget-news.php:110
+#: includes/widgets/orbis-widget-news.php:106
 #: includes/widgets/orbis-widget-posts.php:147
 #: includes/widgets/orbis-widget-stats.php:84
 #: includes/widgets/orbis-widget-twitter.php:83
@@ -450,7 +442,7 @@ msgstr "Aantal:"
 msgid "Orbis News"
 msgstr "Orbis nieuws"
 
-#: includes/widgets/orbis-widget-news.php:72
+#: includes/widgets/orbis-widget-news.php:68
 msgid "More news"
 msgstr "Meer nieuws"
 
@@ -558,7 +550,7 @@ msgstr "Aangemaakt door"
 
 #: single-orbis_company.php:113
 #: single-orbis_person.php:133
-#: single-orbis_project.php:153
+#: single-orbis_project.php:163
 #: single-orbis_task.php:58
 #: single.php:49
 msgid "Actions"
@@ -633,7 +625,15 @@ msgstr "Gefactureerd"
 msgid "Not invoiced"
 msgstr "Niet gefactureerd"
 
-#: single-orbis_project.php:132
+#: single-orbis_project.php:125
+msgid "Invoicable"
+msgstr "Facturabel"
+
+#: single-orbis_project.php:129
+msgid "Not invoicable"
+msgstr "Niet facturabel"
+
+#: single-orbis_project.php:142
 msgid "Invoice"
 msgstr "Factuur"
 
@@ -824,6 +824,12 @@ msgstr "Panel"
 msgctxt "sorting"
 msgid "Order"
 msgstr "Sorteer"
+
+#~ msgid "Slogan"
+#~ msgstr "Slogan"
+
+#~ msgid "Logo (SVG)"
+#~ msgstr "Logo (SVG)"
 
 #~ msgid "404"
 #~ msgstr "404"
