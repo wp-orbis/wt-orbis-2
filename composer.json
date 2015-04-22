@@ -1,6 +1,6 @@
 {
 	"name": "orbis",
-	"description": "A WordPress theme for the Orbis plugin based on Bootstrap.",
+	"description": "The default WordPress theme for Orbis.",
 	"version": "1.2.0",
 	"keywords": [
 		"orbis",
@@ -8,7 +8,7 @@
 		"theme",
 		"bootstrap"
 	],
-	"homepage": "http://www.happywp.com/themes/orbis/",
+	"homepage": "http://www.pronamic.eu/themes/orbis/",
 	"authors": [
 		{
 			"name": "Remco Tolsma",
@@ -25,8 +25,8 @@
     ],
     "support": {
         "email": "support@pronamic.nl",
-        "issues": "https://github.com/pronamic/wt-orbis/issues",
-        "source": "https://github.com/pronamic/wt-orbis"
+        "issues": "https://github.com/pronamic/wt-orbis2/issues",
+        "source": "https://github.com/pronamic/wt-orbis2"
     },
 	"type": "wordpress-theme",
 	"require": {

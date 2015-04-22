@@ -1,0 +1,212 @@
+/* -----------------------------------------
+   Navigation
+----------------------------------------- */
+
+.primary-nav {
+	padding-bottom: 20px;
+}
+
+.primary-nav h3 {
+	color: #fff;
+
+	font-size: 14px;
+
+	margin-left: 19px;
+
+	text-transform: uppercase;
+}
+
+.primary-nav ul {
+	list-style: none;
+
+	margin: 0;
+	padding: 0;
+}
+
+.primary-nav li {
+	position: relative;
+}
+
+.primary-nav a {
+	border-left: 3px solid transparent;
+
+	color: #999;
+
+	display: block;
+
+	outline: none;
+
+	padding: 10px 16px;
+
+	text-decoration: none;
+}
+
+.primary-nav a i.fa {
+	font-size: 1.2em;
+
+	margin-right: 5px;
+}
+
+.primary-nav a:hover {
+	color: #fff;
+}
+
+.primary-nav li.active > a,
+.primary-nav li.current-menu-item > a,
+.primary-nav li.current-url-ancestor > a,
+.primary-nav li.current-menu-parent > a {
+	color: #fff;
+}
+
+.primary-nav > ul > li.active > a,
+.primary-nav > ul > li.current-menu-item > a,
+.primary-nav > ul > li.current-url-ancestor > a,
+.primary-nav > ul > li.current-menu-parent > a {
+	background-color: #000;
+
+	border-color: #428bca;
+}
+
+.primary-nav li.menu-item-has-children > a:after {
+	content: "\f0d7";
+
+	display: inline-block;
+
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-weight: normal;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	position: absolute;
+	right: 10px;
+	
+	z-index: 20;
+}
+
+.primary-nav li.menu-item-has-children.active > a:after {
+	content: "\f0d8";
+}
+
+.primary-nav .sub-menu {
+	background: #333;
+
+	display: none;
+
+	padding: 5px 0;
+}
+
+.primary-nav .sub-menu a {
+	padding: 5px 16px;
+}
+
+.primary-nav li.current-menu-parent .sub-menu {
+	display: block;
+}
+
+.primary-nav .sub-menu a i.fa {
+	display: none;
+}
+
+a.toggle-nav {
+	cursor: pointer;
+
+	display: block;
+}
+
+a.toggle-nav:before {
+	content: "\f137";
+
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.2em;
+
+	margin-right: 5px;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.mobile-menu .primary-nav h3,
+.mobile-menu .primary-nav .nav-label,
+.mobile-menu .site-title {
+	display: none;
+}
+
+.mobile-menu .primary-nav > ul > li > a,
+.mobile-menu a.toggle-nav {
+	text-align: center;
+}
+
+.mobile-menu .primary-nav a i.fa,
+.mobile-menu a.toggle-nav:before {
+	font-size: 24px;
+	
+	margin: 0;
+}
+
+.mobile-menu .primary-nav li.current-menu-parent .sub-menu,
+.mobile-menu .primary-nav li.menu-item-has-children > a:after {
+	display: none;
+}
+
+.mobile-menu a.toggle-nav:before {
+	content: "\f138";
+}
+
+.mobile-menu .primary-nav .sub-menu {
+	position: absolute;
+	left: 60px;
+	top: 0;
+	
+	z-index: 20;
+	
+	width: 200px;
+}
+	
+.mobile-menu .primary-nav .sub-menu .nav-label {
+	display: block;
+}
+
+@media only screen and (max-width: 782px) {
+	a.toggle-nav {
+		display: none;	
+	}
+
+	.primary-nav h3,
+	.primary-nav .nav-label,
+	.site-title {
+		display: none;
+	}
+
+	.primary-nav a i.fa {
+		font-size: 24px;
+	
+		margin: 0;
+	}
+	
+	.primary-nav > ul > li > a {
+		text-align: center;
+	}
+	
+	.primary-nav .sub-menu {
+		position: absolute;
+		left: 60px;
+		top: 0;
+		
+		z-index: 20;
+		
+		width: 200px;
+	}
+	
+	.primary-nav .sub-menu .nav-label {
+		display: block;
+	}
+	
+	.primary-nav li.current-menu-parent .sub-menu,
+	.primary-nav li.menu-item-has-children > a:after {
+		display: none;
+	}
+}

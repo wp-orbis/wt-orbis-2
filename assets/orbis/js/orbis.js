@@ -13,6 +13,12 @@
 			e.preventDefault();
 
 			$( this ).closest( 'li' ).toggleClass( 'active' );
+
+			$( this ).next( '.sub-menu' ).toggle();
+		} );
+
+		$( '.toggle-nav' ).click( function( e ) {
+			$( '.page-wrapper' ).toggleClass( 'mobile-menu' );
 		} );
 
     	// Tabs

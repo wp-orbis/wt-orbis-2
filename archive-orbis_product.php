@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
-<header class="clearfix">
-	<h3 class="pull-left"><?php _e( 'Overview', 'orbis' ); ?></h3>
-
-	<a class="btn btn-primary pull-right" href="<?php echo orbis_get_url_post_new(); ?>">
+<header class="section-header clearfix">
+	<a class="btn btn-primary pull-right" href="<?php echo esc_url( orbis_get_url_post_new() ); ?>">
 		<span class="glyphicon glyphicon-plus"></span> <?php _e( 'Add product', 'orbis' ); ?>
 	</a>
 </header>
@@ -14,11 +12,12 @@
 	<?php if ( have_posts() ) : ?>
 
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-condense table-hover">
+			<table class="table table-striped table-condense table-hover">
 				<thead>
 					<tr>
 						<th><?php _e( 'Title', 'orbis' ); ?></th>
 						<th><?php _e( 'Price', 'orbis' ); ?></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,9 +37,10 @@
 								<?php endif; ?>
 							</td>
 							<td>
+								<?php orbis_product_the_price(); ?>
+							</td>
+							<td>
 								<div class="actions">
-									<?php orbis_product_the_price(); ?>
-
 									<div class="nubbin">
 										<?php orbis_edit_post_link(); ?>
 									</div>
@@ -66,4 +66,4 @@
 
 <?php orbis_content_nav(); ?>
 
-<?php get_footer();
+<?php get_footer(); ?>

@@ -24,7 +24,7 @@
 
 						<?php else : ?>
 
-							<img src="<?php bloginfo('template_directory'); ?>/placeholders/avatar.png" alt="">
+							<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/avatar.png" alt="">
 
 						<?php endif; ?>
 					</a>
@@ -35,13 +35,13 @@
 						<p>
 							<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
-								<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></span> <br />
+								<span class="entry-meta"><?php echo esc_html( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ); ?></span> <br />
 	
 							<?php endif; ?>
 	
 							<?php if ( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ) : ?>
 
-								<span class="entry-meta"><?php echo get_post_meta( $post->ID, '_orbis_person_phone_number', true ); ?></span>
+								<span class="entry-meta"><?php echo esc_html( get_post_meta( $post->ID, '_orbis_person_phone_number', true ) ); ?></span>
 	
 							<?php endif; ?>
 						</p>

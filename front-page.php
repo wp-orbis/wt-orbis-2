@@ -32,7 +32,7 @@
 
 	<div class="row">
 		<?php 
-	
+
 		the_widget( 'Orbis_List_Posts_Widget', array(
 			'post_type_name' => 'orbis_company', 
 			'number'         => 8, 

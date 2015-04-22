@@ -36,7 +36,7 @@ function orbis_setup() {
 	load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
 
 	/* Editor style */
-	add_editor_style();
+	add_editor_style( 'assets/orbis/css/editor-style.css' );
 
 	/* Add theme support */
 	add_theme_support( 'post-thumbnails' );
@@ -207,7 +207,7 @@ add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );
 function orbis_get_title() {
 	if ( is_front_page() ) {
 		return __( 'Dashboard', 'orbis' );
-	
+
 	} elseif ( is_home() ) {
 		return __( 'News', 'orbis' );
 
@@ -219,7 +219,7 @@ function orbis_get_title() {
 
 	} elseif ( is_tag() ) {
 		return single_tag_title( '', false );
-	
+
 	} elseif ( is_author() ) {
 		return get_the_author();
 
@@ -233,7 +233,7 @@ function orbis_get_title() {
 		return __( '404 - Page not found', 'orbis' );
 
 	} else {
-		return __( 'Dude, what is this?', 'orbis' );
+		return __( 'Unknown', 'orbis' );
 
 	}
 }
@@ -244,8 +244,8 @@ function orbis_get_title() {
 function orbis_load_css() {
 	$style = '';
 	$style .= '<style type="text/css" media="screen">';
-	$style .= 'a, .btn-default { color: ' . get_option( 'orbis_primary_color' ) . '; }';
-	$style .= '.btn-default, .btn-primary, .panel.panel-featured { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
+	$style .= 'a { color: ' . get_option( 'orbis_primary_color' ) . '; }';
+	$style .= '.btn-primary, .panel.panel-featured { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.btn-primary { background-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.btn-primary:hover, .btn-primary:focus, .btn-primary:active { background-color: ' . get_option( 'orbis_primary_color' ) . '; border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
 	$style .= '.primary-nav > ul > li.active > a, .primary-nav > ul > li.current-menu-item > a, .primary-nav > ul > li.current-url-ancestor > a, .primary-nav > ul > li.current-menu-parent > a { border-color: ' . get_option( 'orbis_primary_color' ) . '; }';
@@ -255,3 +255,14 @@ function orbis_load_css() {
 }
 
 add_action( 'wp_head', 'orbis_load_css' );
+
+/**
+ * Support SVG uploads
+ */
+function orbis_allowed_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_filter( 'upload_mimes', 'orbis_allowed_mime_types' );

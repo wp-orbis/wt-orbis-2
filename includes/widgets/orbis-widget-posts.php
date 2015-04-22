@@ -103,7 +103,17 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 
 			<div class="content">
 				<p class="alt">
-					<?php _e( 'No posts found.', 'orbis' ); ?>
+					<?php
+
+					$post_type_object = get_post_type_object( $post_type_name );
+
+					printf( __( 'No %3$s found. <a href="%1$s">Add your first %2$s</a>.', 'orbis' ),
+						esc_url( add_query_arg( 'post_type', $post_type_name, admin_url( 'post-new.php' ) ) ),
+						esc_html( strtolower( $post_type_object->labels->singular_name ) ),
+						esc_html( strtolower( $post_type_object->labels->name ) )
+					);
+
+					?>
 				</p>
 			</div>
 
@@ -151,7 +161,7 @@ class Orbis_List_Posts_Widget extends WP_Widget {
 				<?php foreach ( $post_types as $post_type ) : ?>
 
 					<option value="<?php echo $post_type->name; ?>" <?php if ( $post_type->name == $post_type_name ) : ?>selected="selected"<?php endif; ?>>
-						<?php echo $post_type->label; ?>
+						<?php echo esc_html( $post_type->label ); ?>
 					</option>
 
 				<?php endforeach; ?>

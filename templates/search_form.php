@@ -11,7 +11,6 @@ if ( is_post_type_archive() ) {
 }
 
 ?>
-
 <div class="well">
 	<form class="form-inline" method="get" action="<?php echo esc_attr( $action_url ); ?>">
 		<div class="form-search">
@@ -21,7 +20,7 @@ if ( is_post_type_archive() ) {
 			</div>
 
 			<button type="submit" class="btn btn-default"><?php _e( 'Search', 'orbis' ); ?></button> 
-			
+
 			<?php if ( $has_advanced) : ?>
 
 				<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php _e( 'Advanced Search', 'orbis' ); ?></a></small>

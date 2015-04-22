@@ -2,7 +2,7 @@
 
 $sections = apply_filters( 'orbis_company_sections', array() );
 
-if ( ! empty( $sections ) ): ?>
+if ( ! empty( $sections ) ) : ?>
 
 	<div class="panel with-cols clearfix">
 		<header class="with-tabs">

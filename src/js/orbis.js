@@ -8,6 +8,19 @@
 			}, 20 );
 		} );
 
+		// Primary navigation
+		$( '.primary-nav > ul > li.menu-item-has-children > a' ).click( function( e ) {
+			e.preventDefault();
+
+			$( this ).closest( 'li' ).toggleClass( 'active' );
+
+			$( this ).next( '.sub-menu' ).toggle();
+		} );
+
+		$( '.toggle-nav' ).click( function( e ) {
+			$( '.page-wrapper' ).toggleClass( 'mobile-menu' );
+		} );
+
     	// Tabs
 		$( '#tabs a' ).click( function( e ) {
 			e.preventDefault();

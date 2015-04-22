@@ -3,7 +3,7 @@
 $query = new WP_Query( array(
 	'post_type'          => 'orbis_task',
 	'posts_per_page'     => 25,
-	'orbis_task_project' => get_the_ID()
+	'orbis_task_project' => get_the_ID(),
 ) );
 
 if ( $query->have_posts() ) : ?>
@@ -19,9 +19,8 @@ if ( $query->have_posts() ) : ?>
 			</thead>
 
 			<tbody>
-	
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			
+
 					<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<td>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -33,9 +32,9 @@ if ( $query->have_posts() ) : ?>
 							<span class="badge"><?php comments_number( '0', '1', '%' ); ?></span>
 						</td>
 					</tr>
-			
+
 				<?php endwhile; ?>
-		
+
 			</tbody>
 		</table>
 	</div>

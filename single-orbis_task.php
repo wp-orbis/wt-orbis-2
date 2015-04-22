@@ -14,7 +14,7 @@
 
 					<div class="content clearfix">
 						<?php if ( has_post_thumbnail() ) : ?>
-				
+
 							<div class="thumbnail">
 								<?php the_post_thumbnail( 'thumbnail' ); ?>
 							</div>
@@ -41,10 +41,10 @@
 					<div class="content">
 						<dl>
 							<dt><?php _e( 'Posted on', 'orbis' ); ?></dt>
-							<dd><?php echo get_the_date(); ?></dd>
+							<dd><?php echo esc_html( get_the_date() ); ?></dd>
 
 							<dt><?php _e( 'Posted by', 'orbis' ); ?></dt>
-							<dd><?php echo get_the_author(); ?></dd>
+							<dd><?php echo esc_html( get_the_author() ); ?></dd>
 
 							<dt><?php _e( 'Project', 'orbis' ); ?></dt>
 							<dd><?php orbis_task_project(); ?></dd>

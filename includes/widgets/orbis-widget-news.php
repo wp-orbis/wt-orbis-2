@@ -26,7 +26,7 @@ class Orbis_News_Widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 		echo $before_widget;
-		
+
 		if ( ! empty( $title ) ) {
 			echo $before_title . $title . $after_title;
 		}
@@ -40,23 +40,19 @@ class Orbis_News_Widget extends WP_Widget {
 		?>
 
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-		
+
 			<div class="news with-cols clearfix">
 				<div class="row">
 					<div class="col-md-6">
 						<div class="content">
-							<a href="<?php the_permalink(); ?>">
-								<?php if ( has_post_thumbnail() ) : ?>
+							<?php if ( has_post_thumbnail() ) : ?>
 
+								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'featured' ); ?>
+								</a>
 
-								<?php else : ?>
+							<?php endif; ?>
 
-									<img src="<?php bloginfo( 'template_directory' ); ?>/placeholders/featured.png" alt="" />
-
-								<?php endif; ?>
-							</a>
-		
 							<h4>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h4>
@@ -70,14 +66,14 @@ class Orbis_News_Widget extends WP_Widget {
 					<div class="col-md-6">
 						<div class="content">
 							<h4><?php _e( 'More news', 'orbis' ); ?></h4>
-		
+
 							<ul class="no-disc">
 								<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-		
+
 									<li>
 										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									</li>
-		
+
 								<?php endwhile; ?>
 							</ul>
 						</div>
@@ -88,7 +84,7 @@ class Orbis_News_Widget extends WP_Widget {
 		<?php wp_reset_postdata(); ?>
 
 		<?php echo $after_widget; ?>
-		
+
 		<?php
 	}
 

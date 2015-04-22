@@ -60,7 +60,7 @@ function orbis_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Frontpage Top Widget', 'orbis' ),
 		'id'            => 'frontpage-top-widget',
-		'before_widget' => '<div class="col-md-6"><div id="%1$s" class="panel %2$s">',
+		'before_widget' => '<div class="col-md-12"><div id="%1$s" class="panel %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<header><h3 class="widget-title">',
 		'after_title'   => '</h3></header>'
