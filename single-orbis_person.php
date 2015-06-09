@@ -44,7 +44,10 @@
 								<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
 									<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
-									<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
+									<dd>
+										<?php $email = get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?>
+										<a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+									</dd>
 
 								<?php endif; ?>
 
