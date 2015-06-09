@@ -26,7 +26,7 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 				<dt><?php _e( 'Address', 'orbis' ); ?></dt>
 				<dd>
 					<?php echo esc_html( $address ); ?><br />
-					<?php echo esc_html( $postcode, ' ', $city ); ?><br />
+					<?php echo esc_html( $postcode . ' ' . $city ); ?><br />
 					<?php echo esc_html( $country ); ?>
 				</dd>
 
