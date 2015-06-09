@@ -266,3 +266,14 @@ function orbis_allowed_mime_types( $mimes ) {
 }
 
 add_filter( 'upload_mimes', 'orbis_allowed_mime_types' );
+
+/**
+ * Orbis get website favicon URL
+ */
+function orbis_get_favicon_url( $domain ) {
+	if ( ! empty( $domain ) ) {
+		return add_query_arg( 'domain', $domain, 'https://plus.google.com/_/favicon' );
+	}
+
+	return null;
+}

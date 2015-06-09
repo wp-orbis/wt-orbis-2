@@ -26,9 +26,11 @@
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<td>
-								<?php if ( get_post_meta( $post->ID, '_orbis_company_website', true ) ) : ?>
+								<?php 
 
-									<?php $favicon_url = add_query_arg( 'domain', get_post_meta( $post->ID, '_orbis_company_website', true ), 'https://plus.google.com/_/favicon' ); ?>
+								$favicon_url = orbis_get_favicon_url( get_post_meta( get_the_ID(), '_orbis_company_website', true ) );
+
+								if ( ! empty( $favicon_url ) ) : ?>
 
 									<img src="<?php echo esc_attr( $favicon_url ); ?>" alt="" />
 
