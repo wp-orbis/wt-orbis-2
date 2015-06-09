@@ -14,14 +14,50 @@ module.exports = function( grunt ) {
 			all: [ '**/*.php', '!node_modules/**', '!bower_components/**' ]
 		},
 		
-		// MakePOT
+		// Check textdomain errors
+		checktextdomain: {
+			options:{
+				text_domain: 'orbis',
+				keywords: [
+					'__:1,2d',
+					'_e:1,2d',
+					'_x:1,2c,3d',
+					'esc_html__:1,2d',
+					'esc_html_e:1,2d',
+					'esc_html_x:1,2c,3d',
+					'esc_attr__:1,2d',
+					'esc_attr_e:1,2d',
+					'esc_attr_x:1,2c,3d',
+					'_ex:1,2c,3d',
+					'_n:1,2,4d',
+					'_nx:1,2,4c,5d',
+					'_n_noop:1,2,3d',
+					'_nx_noop:1,2,3c,4d'
+				]
+			},
+			files: {
+				src:  [
+					'**/*.php',
+					'!deploy/**',
+					'!node_modules/**',
+					'!tests/**',
+					'!wp-content/**'
+				],
+				expand: true
+			}
+		},
+		
+		// Make POT
 		makepot: {
 			target: {
 				options: {
-					cwd: '',
 					domainPath: 'languages',
 					type: 'wp-theme',
-					exclude: [ 'bower_components/.*', 'node_modules/.*' ],
+					updatePoFiles: true,
+					exclude: [
+						'bower_components/.*',
+						'node_modules/.*'
+					]
 				}
 			}
 		},
@@ -29,12 +65,13 @@ module.exports = function( grunt ) {
 		// PHP Code Sniffer
 		phpcs: {
 			application: {
-				dir: [ './' ],
+				dir: [
+					'**/*.php',
+					'!node_modules/**'
+				],
 			},
 			options: {
-				standard: 'phpcs.ruleset.xml',
-				extensions: 'php',
-				ignore: 'node_modules,assets'
+				standard: 'phpcs.ruleset.xml'
 			}
 		},
 
@@ -107,6 +144,7 @@ module.exports = function( grunt ) {
 		}
 	} );
 
+	grunt.loadNpmTasks( 'grunt-checktextdomain' );
 	grunt.loadNpmTasks( 'grunt-phpcs' );
 	grunt.loadNpmTasks( 'grunt-phplint' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
@@ -120,5 +158,5 @@ module.exports = function( grunt ) {
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
 	grunt.registerTask( 'build', [ 'phpcs' ] );
-	grunt.registerTask( 'pot', [ 'makepot' ] );
+	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 };
