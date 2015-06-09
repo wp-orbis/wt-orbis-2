@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis 2.0 2.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-04-22 13:40:17+00:00\n"
+"POT-Creation-Date: 2015-06-09 12:41:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.2\n"
 
 #: 404.php:5
 msgid "Houston, we have a problem"
@@ -40,8 +40,9 @@ msgstr ""
 #: archive-orbis_company.php:100 archive-orbis_deal.php:76
 #: archive-orbis_hosting_group.php:68 archive-orbis_person.php:90
 #: archive-orbis_product.php:60 archive-orbis_project.php:91
-#: archive-orbis_subs_product.php:84 archive-orbis_subscription.php:60
-#: archive-orbis_task.php:79 content-post.php:100 index.php:72
+#: archive-orbis_subs_product.php:84 archive-orbis_subs_purchase.php:96
+#: archive-orbis_subscription.php:60 archive-orbis_task.php:79
+#: content-post.php:100 index.php:72
 msgid "No results found."
 msgstr ""
 
@@ -60,8 +61,8 @@ msgstr ""
 
 #: archive-orbis_deal.php:20 archive-orbis_hosting_group.php:18
 #: archive-orbis_product.php:18 archive-orbis_subs_product.php:18
-#: archive-orbis_subscription.php:18 index.php:22
-#: templates/filter-orbis_project.php:8
+#: archive-orbis_subs_purchase.php:18 archive-orbis_subscription.php:18
+#: index.php:22 templates/filter-orbis_project.php:8
 msgid "Title"
 msgstr ""
 
@@ -126,13 +127,25 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: archive-orbis_subs_product.php:5
+#: archive-orbis_subs_product.php:5 archive-orbis_subs_purchase.php:5
 msgid "Add subscription product"
 msgstr ""
 
 #: archive-orbis_subs_product.php:20
 #: templates/subscription_product_details.php:23
 msgid "Cost Price"
+msgstr ""
+
+#: archive-orbis_subs_purchase.php:19
+msgid "Costs"
+msgstr ""
+
+#: archive-orbis_subs_purchase.php:20
+msgid "Revenue"
+msgstr ""
+
+#: archive-orbis_subs_purchase.php:21
+msgid "Profit"
 msgstr ""
 
 #: archive-orbis_task.php:5 templates/task_form.php:13
