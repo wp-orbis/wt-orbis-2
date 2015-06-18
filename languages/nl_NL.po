@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-06-09 12:41:12+00:00\n"
+"POT-Creation-Date: 2015-06-09 14:02:09+00:00\n"
 "PO-Revision-Date: 2015-06-09 14:43+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
@@ -42,7 +42,7 @@ msgstr "Adres"
 msgid "Online"
 msgstr "Online"
 
-#: archive-orbis_company.php:100 archive-orbis_deal.php:76
+#: archive-orbis_company.php:102 archive-orbis_deal.php:76
 #: archive-orbis_hosting_group.php:68 archive-orbis_person.php:90
 #: archive-orbis_product.php:60 archive-orbis_project.php:91
 #: archive-orbis_subs_product.php:84 archive-orbis_subs_purchase.php:96
@@ -333,7 +333,7 @@ msgid "Secondary color"
 msgstr "Secundarie kleur"
 
 #: includes/functions.php:9 single-orbis_company.php:114
-#: single-orbis_person.php:116 single-orbis_project.php:164
+#: single-orbis_person.php:119 single-orbis_project.php:164
 #: single-orbis_task.php:59 single.php:50
 msgid "Edit"
 msgstr "Bewerken"
@@ -515,17 +515,17 @@ msgstr "Geen personen verbonden."
 msgid "Additional Information"
 msgstr "Aanvullende informatie"
 
-#: single-orbis_company.php:107 single-orbis_person.php:111
+#: single-orbis_company.php:107 single-orbis_person.php:114
 #: single-orbis_project.php:80 single-orbis_task.php:43 single.php:43
 msgid "Posted on"
 msgstr "Geplaatst op"
 
-#: single-orbis_company.php:110 single-orbis_person.php:113
+#: single-orbis_company.php:110 single-orbis_person.php:116
 #: single-orbis_project.php:83 single-orbis_task.php:46 single.php:46
 msgid "Posted by"
 msgstr "Aangemaakt door"
 
-#: single-orbis_company.php:113 single-orbis_person.php:115
+#: single-orbis_company.php:113 single-orbis_person.php:118
 #: single-orbis_project.php:163 single-orbis_task.php:58 single.php:49
 msgid "Actions"
 msgstr "Acties"
@@ -546,23 +546,23 @@ msgstr "Mobiel nummer"
 msgid "E-mail address"
 msgstr "E-mailadres"
 
-#: single-orbis_person.php:53
+#: single-orbis_person.php:56
 msgid "Social media"
 msgstr "Social media"
 
-#: single-orbis_person.php:60
+#: single-orbis_person.php:63
 msgid "Twitter"
 msgstr "Twitter"
 
-#: single-orbis_person.php:69
+#: single-orbis_person.php:72
 msgid "Facebook"
 msgstr "Facebook"
 
-#: single-orbis_person.php:78
+#: single-orbis_person.php:81
 msgid "LinkedIn"
 msgstr "Linkedin"
 
-#: single-orbis_person.php:106
+#: single-orbis_person.php:109
 msgid "Additional information"
 msgstr "Aanvullende informatie"
 
@@ -716,7 +716,7 @@ msgstr "Annuleer"
 msgid "Connected Companies"
 msgstr "Gekoppelde bedrijven"
 
-#: templates/person_companies.php:36
+#: templates/person_companies.php:43
 msgid "No companies connected."
 msgstr "Geen bedrijven verbonden."
 
@@ -761,7 +761,8 @@ msgid "minutes"
 msgstr "minuten"
 
 #. Theme Name of the plugin/theme
-msgid "Orbis 2.0"
+#, fuzzy
+msgid "Orbis 2"
 msgstr "Orbis 2.0"
 
 #. Theme URI of the plugin/theme

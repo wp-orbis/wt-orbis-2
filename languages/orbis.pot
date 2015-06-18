@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orbis 2.0 2.0.0\n"
+"Project-Id-Version: Orbis 2 2.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-06-09 12:41:12+00:00\n"
+"POT-Creation-Date: 2015-06-09 14:02:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
-#: archive-orbis_company.php:100 archive-orbis_deal.php:76
+#: archive-orbis_company.php:102 archive-orbis_deal.php:76
 #: archive-orbis_hosting_group.php:68 archive-orbis_person.php:90
 #: archive-orbis_product.php:60 archive-orbis_project.php:91
 #: archive-orbis_subs_product.php:84 archive-orbis_subs_purchase.php:96
@@ -325,7 +325,7 @@ msgid "Secondary color"
 msgstr ""
 
 #: includes/functions.php:9 single-orbis_company.php:114
-#: single-orbis_person.php:116 single-orbis_project.php:164
+#: single-orbis_person.php:119 single-orbis_project.php:164
 #: single-orbis_task.php:59 single.php:50
 msgid "Edit"
 msgstr ""
@@ -502,17 +502,17 @@ msgstr ""
 msgid "Additional Information"
 msgstr ""
 
-#: single-orbis_company.php:107 single-orbis_person.php:111
+#: single-orbis_company.php:107 single-orbis_person.php:114
 #: single-orbis_project.php:80 single-orbis_task.php:43 single.php:43
 msgid "Posted on"
 msgstr ""
 
-#: single-orbis_company.php:110 single-orbis_person.php:113
+#: single-orbis_company.php:110 single-orbis_person.php:116
 #: single-orbis_project.php:83 single-orbis_task.php:46 single.php:46
 msgid "Posted by"
 msgstr ""
 
-#: single-orbis_company.php:113 single-orbis_person.php:115
+#: single-orbis_company.php:113 single-orbis_person.php:118
 #: single-orbis_project.php:163 single-orbis_task.php:58 single.php:49
 msgid "Actions"
 msgstr ""
@@ -533,23 +533,23 @@ msgstr ""
 msgid "E-mail address"
 msgstr ""
 
-#: single-orbis_person.php:53
+#: single-orbis_person.php:56
 msgid "Social media"
 msgstr ""
 
-#: single-orbis_person.php:60
+#: single-orbis_person.php:63
 msgid "Twitter"
 msgstr ""
 
-#: single-orbis_person.php:69
+#: single-orbis_person.php:72
 msgid "Facebook"
 msgstr ""
 
-#: single-orbis_person.php:78
+#: single-orbis_person.php:81
 msgid "LinkedIn"
 msgstr ""
 
-#: single-orbis_person.php:106
+#: single-orbis_person.php:109
 msgid "Additional information"
 msgstr ""
 
@@ -703,7 +703,7 @@ msgstr ""
 msgid "Connected Companies"
 msgstr ""
 
-#: templates/person_companies.php:36
+#: templates/person_companies.php:43
 msgid "No companies connected."
 msgstr ""
 
@@ -748,7 +748,7 @@ msgid "minutes"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Orbis 2.0"
+msgid "Orbis 2"
 msgstr ""
 
 #. Theme URI of the plugin/theme
