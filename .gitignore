@@ -7,8 +7,8 @@
 /.buildpath
 /.project
 
-# Grunt
+# Node.js
 /node_modules/
 
-# Node
-/node_modules/
+# Sass
+.sass-cache

@@ -1,4 +1,6 @@
 module.exports = function( grunt ) {
+	require( 'load-grunt-tasks' )( grunt );
+
 	// Project configuration.
 	grunt.initConfig( {
 		// Package
@@ -77,7 +79,17 @@ module.exports = function( grunt ) {
 
 		// Copy
 		copy: {
-			main: {
+			theme_style: {
+				files: [
+					{ // Theme CSS
+						expand: true,
+						cwd: 'src/css/',
+						src: [ '**' ],
+						dest: 'css'
+					},
+				]
+			},
+			assets: {
 				files: [
 					{ // Bootstrap
 						expand: true,
@@ -89,18 +101,14 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Sass
-		sass: {
-			dev: {
+		// Compass
+		compass: {
+			build: {
 				options: {
-					sourcemap: 'none',
-					style: 'expanded',
-					noCache: true,
-				},
-				files: {
-					'assets/orbis/css/orbis.css': 'src/sass/orbis.scss',
+					sassDir: 'src/sass',
+					cssDir: 'src/css'
 				}
-			},
+			}
 		},
 
 		// Concat
@@ -115,7 +123,7 @@ module.exports = function( grunt ) {
 		cssmin: {
 			combine: {
 				files: {
-					'assets/orbis/css/orbis.min.css': [ 'assets/orbis/css/orbis.css' ]
+					'css/orbis.min.css': [ 'css/orbis.css' ]
 				}
 			}
 		},
@@ -144,19 +152,8 @@ module.exports = function( grunt ) {
 		}
 	} );
 
-	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	grunt.loadNpmTasks( 'grunt-phpcs' );
-	grunt.loadNpmTasks( 'grunt-phplint' );
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-concat' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
-
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'copy', 'compass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
 	grunt.registerTask( 'build', [ 'phpcs' ] );
 	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
 };

@@ -604,7 +604,7 @@ table tr.orbis-status-finished td.project-time span.text-success {
 
 table tr.orbis-status-cancelled,
 table tr.orbis-status-cancelled a,
-.single .orbis-status-cancelled .page-header {
+body.single-orbis_subscription.orbis-status-cancelled .orbis-page-title {
 	color: #999;
 
 	text-decoration: line-through;

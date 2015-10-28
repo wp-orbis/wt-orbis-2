@@ -36,7 +36,7 @@ function orbis_setup() {
 	load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
 
 	/* Editor style */
-	add_editor_style( 'assets/orbis/css/editor-style.css' );
+	add_editor_style( 'css/editor-style.css' );
 
 	/* Add theme support */
 	add_theme_support( 'post-thumbnails' );
@@ -102,7 +102,7 @@ function orbis_load_scripts() {
 
 	wp_enqueue_style(
 		'wt-orbis',
-		$uri . "/assets/orbis/css/orbis$suffix.css",
+		$uri . '/css/orbis' . $suffix . '.css',
 		array( 'bootstrap' ),
 		'1.0.0'
 	);
