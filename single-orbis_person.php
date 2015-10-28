@@ -59,8 +59,12 @@
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
 
 												<li class="twitter">
-													<?php $twitter_url = 'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>
-													<a href="<?php echo esc_attr( $twitter_url ); ?>"><?php esc_html_e( 'Twitter', 'orbis' ); ?></a>
+													<?php $twitter_url = 'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>													
+													<a href="<?php echo esc_attr( $twitter_url ); ?>">
+														<i class="fa fa-twitter"></i>
+
+														<span class="sr-only"><?php esc_html_e( 'Twitter', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>
@@ -69,7 +73,11 @@
 
 												<li class="facebook">
 													<?php $facebook_url = get_post_meta( $post->ID, '_orbis_person_facebook', true ); ?>
-													<a href="<?php echo esc_attr( $facebook_url ); ?>"><?php esc_html_e( 'Facebook', 'orbis' ); ?></a>
+													<a href="<?php echo esc_attr( $facebook_url ); ?>">
+														<i class="fa fa-facebook"></i>
+
+														<span class="sr-only"><?php esc_html_e( 'Facebook', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>
@@ -78,7 +86,11 @@
 
 												<li class="linkedin">
 													<?php $linkedin_url = get_post_meta( $post->ID, '_orbis_person_linkedin', true ); ?>
-													<a href="<?php echo esc_attr( $linkedin_url ); ?>"><?php esc_html_e( 'LinkedIn', 'orbis' ); ?></a>
+													<a href="<?php echo esc_attr( $linkedin_url ); ?>">
+														<i class="fa fa-linkedin"></i>
+
+														<span class="sr-only"><?php esc_html_e( 'LinkedIn', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>
