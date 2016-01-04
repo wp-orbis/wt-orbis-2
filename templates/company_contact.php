@@ -3,6 +3,8 @@
 global $post;
 
 $kvk_number = get_post_meta( $post->ID, '_orbis_company_kvk_number', true );
+$vat_number = get_post_meta( $post->ID, '_orbis_company_vat_number', true );
+
 $email      = get_post_meta( $post->ID, '_orbis_company_email', true );
 $website    = get_post_meta( $post->ID, '_orbis_company_website', true );
 
@@ -26,7 +28,7 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 				<dt><?php _e( 'Address', 'orbis' ); ?></dt>
 				<dd>
 					<?php echo esc_html( $address ); ?><br />
-					<?php echo esc_html( $postcode, ' ', $city ); ?><br />
+					<?php echo esc_html( $postcode . ' ' . $city ); ?><br />
 					<?php echo esc_html( $country ); ?>
 				</dd>
 
@@ -65,7 +67,7 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 
 					<?php 
 
-					$url_open_kvk = sprintf( 'http://openkvk.nl/%s', $kvk_number );
+					$url_open_kvk = sprintf( 'https://openkvk.nl/kvk/%s/', $kvk_number );
 					$url_kvk      = add_query_arg( 'q', $kvk_number, 'http://zoeken.kvk.nl/search.ashx' );
 
 					?>
@@ -74,6 +76,13 @@ $ebilling   = get_post_meta( $post->ID, '_orbis_company_ebilling', true );
 						<a class="label label-info" href="<?php echo esc_attr( $url_kvk ); ?>" target="_blank">kvk.nl</a>
 					</small>
 				</dd>
+
+			<?php endif; ?>
+
+			<?php if ( ! empty( $vat_number ) ) : ?>
+
+				<dt><?php _e( 'VAT Number', 'orbis' ); ?></dt>
+				<dd><?php echo esc_html( $vat_number ); ?></dd>
 
 			<?php endif; ?>
 		</dl>

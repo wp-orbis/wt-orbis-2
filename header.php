@@ -56,7 +56,7 @@
 
 			<div class="main-wrapper">
 				<div class="page-header clearfix">
-					<h1 class="pull-left">
+					<h1 class="orbis-page-title pull-left">
 						<?php echo orbis_get_title(); ?>
 					</h1>
 

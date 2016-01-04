@@ -1,4 +1,4 @@
-=== Orbis ===
+=== Orbis 2 ===
 Contributors: pronamic, remcotolsma, kjtolsma
 Tags: orbis, intranet
 Requires at least: 4.1
@@ -7,6 +7,9 @@ Stable tag: 2.0.0
 
 
 == Changelog ==
+
+= 2.0.0 =
+*	First official release.
 
 = 1.2.1 =
 *	Tweak - Improved support for the Orbis Twitter plugin.

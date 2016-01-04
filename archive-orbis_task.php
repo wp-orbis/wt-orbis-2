@@ -34,7 +34,7 @@
 							$days    = round( $delta / ( 3600 * 24 ) );
 
 							if ( $days < 0 ) {
-								$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis_tasks' ), $days );
+								$due_at_ouput = sprintf( __( '<span class="label label-danger">%d days</span>', 'orbis' ), $days );
 							} else {
 								$due_at_ouput = '';
 							}

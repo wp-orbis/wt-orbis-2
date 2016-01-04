@@ -9,6 +9,7 @@ $orderbys = array(
 	'date'                            => __( 'Date', 'orbis' ),
 	'modified'                        => __( 'Modified', 'orbis' ),
 	'project_finished_modified'       => __( 'Finished Modified', 'orbis' ),
+	'project_invoice_number'          => __( 'Invoice Number', 'orbis' ),
 	'project_invoice_number_modified' => __( 'Invoice Number Modified', 'orbis' ),
 );
 

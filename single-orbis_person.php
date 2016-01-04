@@ -44,7 +44,10 @@
 								<?php if ( get_post_meta( $post->ID, '_orbis_person_email_address', true ) ) : ?>
 
 									<dt><?php _e( 'E-mail address', 'orbis' ); ?></dt>
-									<dd><?php echo get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?></dd>
+									<dd>
+										<?php $email = get_post_meta( $post->ID, '_orbis_person_email_address', true ); ?>
+										<a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+									</dd>
 
 								<?php endif; ?>
 
@@ -56,14 +59,12 @@
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_twitter', true ) ) : ?>
 
 												<li class="twitter">
-													<?php
+													<?php $twitter_url = 'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ); ?>													
+													<a href="<?php echo esc_attr( $twitter_url ); ?>">
+														<i class="fa fa-twitter"></i>
 
-													printf( __( '<a href="%1$s"><i class="fa fa-twitter"></i> <span>%2$s</span></a>', 'orbis' ),
-														'https://twitter.com/' . get_post_meta( $post->ID, '_orbis_person_twitter', true ),
-														'Twitter'
-													);
-
-													?>
+														<span class="sr-only"><?php esc_html_e( 'Twitter', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>
@@ -71,14 +72,12 @@
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_facebook', true ) ) : ?>
 
 												<li class="facebook">
-													<?php
+													<?php $facebook_url = get_post_meta( $post->ID, '_orbis_person_facebook', true ); ?>
+													<a href="<?php echo esc_attr( $facebook_url ); ?>">
+														<i class="fa fa-facebook"></i>
 
-													printf( __( '<a href="%1$s"><i class="fa fa-facebook"></i> <span>%2$s</span></a>', 'orbis' ),
-														get_post_meta( $post->ID, '_orbis_person_facebook', true ),
-														'Facebook'
-													);
-
-													?>
+														<span class="sr-only"><?php esc_html_e( 'Facebook', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>
@@ -86,14 +85,12 @@
 											<?php if ( get_post_meta( $post->ID, '_orbis_person_linkedin', true ) ) : ?>
 
 												<li class="linkedin">
-													<?php
+													<?php $linkedin_url = get_post_meta( $post->ID, '_orbis_person_linkedin', true ); ?>
+													<a href="<?php echo esc_attr( $linkedin_url ); ?>">
+														<i class="fa fa-linkedin"></i>
 
-													printf( __( '<a href="%1$s"><i class="fa fa-linkedin"></i> <span>%2$s</span></a>', 'orbis' ),
-														'http://www.linkedin.com/in/' . get_post_meta( $post->ID, '_orbis_person_linkedin', true ),
-														'LinkedIn'
-													);
-
-													?>
+														<span class="sr-only"><?php esc_html_e( 'LinkedIn', 'orbis' ); ?></span>
+													</a>
 												</li>
 
 											<?php endif; ?>

@@ -1,14 +1,17 @@
 # Bower
 /bower_components/
 
+# Deploy
+/deploy/
+
 # Eclipse
 /.externalToolBuilders/
 /.settings/
 /.buildpath
 /.project
 
-# Grunt
+# Node.js
 /node_modules/
 
-# Node
-/node_modules/
+# Sass
+.sass-cache

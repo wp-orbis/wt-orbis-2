@@ -36,7 +36,7 @@ function orbis_setup() {
 	load_theme_textdomain( 'orbis', get_template_directory() . '/languages' );
 
 	/* Editor style */
-	add_editor_style( 'assets/orbis/css/editor-style.css' );
+	add_editor_style( 'css/editor-style.css' );
 
 	/* Add theme support */
 	add_theme_support( 'post-thumbnails' );
@@ -90,7 +90,7 @@ function orbis_load_scripts() {
 		'wt-orbis',
 		$uri . "/assets/orbis/js/orbis$suffix.js",
 		array( 'jquery', 'bootstrap' ),
-		'1.0.0',
+		'2.0.0',
 		true
 	);
 
@@ -102,9 +102,9 @@ function orbis_load_scripts() {
 
 	wp_enqueue_style(
 		'wt-orbis',
-		$uri . "/assets/orbis/css/orbis$suffix.css",
+		$uri . '/css/orbis' . $suffix . '.css',
 		array( 'bootstrap' ),
-		'1.0.0'
+		'2.0.0'
 	);
 
 }
@@ -266,3 +266,14 @@ function orbis_allowed_mime_types( $mimes ) {
 }
 
 add_filter( 'upload_mimes', 'orbis_allowed_mime_types' );
+
+/**
+ * Orbis get website favicon URL
+ */
+function orbis_get_favicon_url( $domain ) {
+	if ( ! empty( $domain ) ) {
+		return add_query_arg( 'domain', $domain, 'https://plus.google.com/_/favicon' );
+	}
+
+	return null;
+}

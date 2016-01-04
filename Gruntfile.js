@@ -1,4 +1,6 @@
 module.exports = function( grunt ) {
+	require( 'load-grunt-tasks' )( grunt );
+
 	// Project configuration.
 	grunt.initConfig( {
 		// Package
@@ -14,14 +16,50 @@ module.exports = function( grunt ) {
 			all: [ '**/*.php', '!node_modules/**', '!bower_components/**' ]
 		},
 		
-		// MakePOT
+		// Check textdomain errors
+		checktextdomain: {
+			options:{
+				text_domain: 'orbis',
+				keywords: [
+					'__:1,2d',
+					'_e:1,2d',
+					'_x:1,2c,3d',
+					'esc_html__:1,2d',
+					'esc_html_e:1,2d',
+					'esc_html_x:1,2c,3d',
+					'esc_attr__:1,2d',
+					'esc_attr_e:1,2d',
+					'esc_attr_x:1,2c,3d',
+					'_ex:1,2c,3d',
+					'_n:1,2,4d',
+					'_nx:1,2,4c,5d',
+					'_n_noop:1,2,3d',
+					'_nx_noop:1,2,3c,4d'
+				]
+			},
+			files: {
+				src:  [
+					'**/*.php',
+					'!deploy/**',
+					'!node_modules/**',
+					'!tests/**',
+					'!wp-content/**'
+				],
+				expand: true
+			}
+		},
+		
+		// Make POT
 		makepot: {
 			target: {
 				options: {
-					cwd: '',
 					domainPath: 'languages',
 					type: 'wp-theme',
-					exclude: [ 'bower_components/.*', 'node_modules/.*' ],
+					updatePoFiles: true,
+					exclude: [
+						'bower_components/.*',
+						'node_modules/.*'
+					]
 				}
 			}
 		},
@@ -29,18 +67,29 @@ module.exports = function( grunt ) {
 		// PHP Code Sniffer
 		phpcs: {
 			application: {
-				dir: [ './' ],
+				dir: [
+					'**/*.php',
+					'!node_modules/**'
+				],
 			},
 			options: {
-				standard: 'phpcs.ruleset.xml',
-				extensions: 'php',
-				ignore: 'node_modules,assets'
+				standard: 'phpcs.ruleset.xml'
 			}
 		},
 
 		// Copy
 		copy: {
-			main: {
+			theme_style: {
+				files: [
+					{ // Theme CSS
+						expand: true,
+						cwd: 'src/css/',
+						src: [ '**' ],
+						dest: 'css'
+					},
+				]
+			},
+			assets: {
 				files: [
 					{ // Bootstrap
 						expand: true,
@@ -49,21 +98,95 @@ module.exports = function( grunt ) {
 						dest: 'assets/bootstrap'
 					},
 				]
+			},
+
+			deploy: {
+				src: [
+					'**',
+					'!bower.json',
+					'!composer.json',
+					'!composer.lock',
+					'!Gruntfile.js',
+					'!package.json',
+					'!phpunit.xml',
+					'!phpunit.xml.dist',
+					'!phpcs.ruleset.xml',
+					'!CHANGELOG.md',
+					'!README.md',
+					'!bower_components/**',
+					'!deploy/**',
+					'!node_modules/**',
+					'!src/**',
+					'!trash/**',
+				],
+				dest: 'deploy/latest',
+				expand: true
+			},
+		},
+
+		// Clean
+		clean: {
+			deploy: {
+				src: [ 'deploy/latest' ]
+			},
+		},
+
+		// Compress
+		compress: {
+			deploy: {
+				options: {
+					archive: 'deploy/archives/<%= pkg.name %>.<%= pkg.version %>.zip'
+				},
+				expand: true,
+				cwd: 'deploy/latest',
+				src: ['**/*'],
+				dest: '<%= pkg.name %>/'
 			}
 		},
 
-		// Sass
-		sass: {
-			dev: {
+		// Git checkout
+		gitcheckout: {
+			tag: {
 				options: {
-					sourcemap: 'none',
-					style: 'expanded',
-					noCache: true,
-				},
-				files: {
-					'assets/orbis/css/orbis.css': 'src/sass/orbis.scss',
+					branch: 'tags/<%= pkg.version %>'
 				}
 			},
+			develop: {
+				options: {
+					branch: 'develop'
+				}
+			}
+		},
+
+		// S3
+		aws_s3: {
+			options: {
+				region: 'eu-central-1'
+			},
+			deploy: {
+				options: {
+					bucket: 'downloads.pronamic.eu',
+					differential: true
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'deploy/archives/',
+						src: '<%= pkg.name %>.<%= pkg.version %>.zip',
+						dest: 'themes/<%= pkg.name %>/'
+					}
+				]
+			}
+		},
+
+		// Compass
+		compass: {
+			build: {
+				options: {
+					sassDir: 'src/sass',
+					cssDir: 'src/css'
+				}
+			}
 		},
 
 		// Concat
@@ -78,7 +201,7 @@ module.exports = function( grunt ) {
 		cssmin: {
 			combine: {
 				files: {
-					'assets/orbis/css/orbis.min.css': [ 'assets/orbis/css/orbis.css' ]
+					'css/orbis.min.css': [ 'css/orbis.css' ]
 				}
 			}
 		},
@@ -107,18 +230,23 @@ module.exports = function( grunt ) {
 		}
 	} );
 
-	grunt.loadNpmTasks( 'grunt-phpcs' );
-	grunt.loadNpmTasks( 'grunt-phplint' );
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-concat' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
-
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'copy', 'sass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
-	grunt.registerTask( 'build', [ 'phpcs' ] );
-	grunt.registerTask( 'pot', [ 'makepot' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'copy', 'compass', 'cssmin', 'uglify', 'concat', 'imagemin' ] );
+	grunt.registerTask( 'build', [] );
+	grunt.registerTask( 'pot', [ 'checktextdomain', 'makepot' ] );
+
+	grunt.registerTask( 'deploy', [
+		'default',
+		'build',
+		'clean:deploy',
+		'copy:deploy',
+		'compress:deploy'
+	] );
+	
+	grunt.registerTask( 's3-deploy', [
+		'gitcheckout:tag',
+		'deploy',
+		'aws_s3:deploy',
+		'gitcheckout:develop'
+	] );
 };
