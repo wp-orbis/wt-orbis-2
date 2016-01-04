@@ -90,7 +90,7 @@ function orbis_load_scripts() {
 		'wt-orbis',
 		$uri . "/assets/orbis/js/orbis$suffix.js",
 		array( 'jquery', 'bootstrap' ),
-		'1.0.0',
+		'2.0.0',
 		true
 	);
 
@@ -104,7 +104,7 @@ function orbis_load_scripts() {
 		'wt-orbis',
 		$uri . '/css/orbis' . $suffix . '.css',
 		array( 'bootstrap' ),
-		'1.0.0'
+		'2.0.0'
 	);
 
 }

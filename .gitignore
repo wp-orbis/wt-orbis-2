@@ -1,6 +1,9 @@
 # Bower
 /bower_components/
 
+# Deploy
+/deploy/
+
 # Eclipse
 /.externalToolBuilders/
 /.settings/
