@@ -4,20 +4,8 @@
  * Twitter widget
  */
 class Orbis_Twitter_Widget extends WP_Widget {
-	/**
-	 * Register this widget
-	 */
-	public static function register() {
-		register_widget( __CLASS__ );
-	}
-
-	////////////////////////////////////////////////////////////
-
-	/**
-	 * Constructs and initializes this widget
-	 */
-	public function Orbis_Twitter_Widget() {
-		parent::WP_Widget( 'orbis_twitter', __( 'Orbis Twitter', 'orbis' ) );
+	function Orbis_Twitter_Widget() {
+		parent::__construct( 'orbis_twitter', __( 'Orbis - Twitter', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {

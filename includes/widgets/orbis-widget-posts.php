@@ -4,20 +4,8 @@
  * List posts widget
  */
 class Orbis_List_Posts_Widget extends WP_Widget {
-	/**
-	 * Register this widget
-	 */
-	public static function register() {
-		register_widget( __CLASS__ );
-	}
-
-	////////////////////////////////////////////////////////////
-
-	/**
-	 * Constructs and initializes this widget
-	 */
-	public function Orbis_List_Posts_Widget() {
-		parent::WP_Widget( 'orbis-list-posts', __( 'Orbis Posts List', 'orbis' ) );
+	function Orbis_List_Posts_Widget() {
+		parent::__construct( 'orbis-list-posts', __( 'Orbis - Posts List', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {

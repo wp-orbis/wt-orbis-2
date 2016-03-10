@@ -4,20 +4,8 @@
  * News widget
  */
 class Orbis_News_Widget extends WP_Widget {
-	/**
-	 * Register this widget
-	 */
-	public static function register() {
-		register_widget( __CLASS__ );
-	}
-
-	////////////////////////////////////////////////////////////
-
-	/**
-	 * Constructs and initializes this widget
-	 */
-	public function Orbis_News_Widget() {
-		parent::WP_Widget( 'orbis-news', __( 'Orbis News', 'orbis' ) );
+	function Orbis_News_Widget() {
+		parent::__construct( 'orbis-news', __( 'Orbis - News', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {

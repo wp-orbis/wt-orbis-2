@@ -4,20 +4,8 @@
  * List comments widget
  */
 class Orbis_Comments_Widget extends WP_Widget {
-	/**
-	 * Register this widget
-	 */
-	public static function register() {
-		register_widget( __CLASS__ );
-	}
-
-	////////////////////////////////////////////////////////////
-
-	/**
-	 * Constructs and initializes this widget
-	 */
-	public function Orbis_Comments_Widget() {
-		parent::WP_Widget( 'orbis-comments', __( 'Orbis Comments', 'orbis' ) );
+	function Orbis_Comments_Widget() {
+		parent::__construct( 'orbis-comments', __( 'Orbis - Comments', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {

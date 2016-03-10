@@ -4,20 +4,8 @@
  * Stats widget
  */
 class Orbis_Stats_Widget extends WP_Widget {
-	/**
-	 * Register this widget
-	 */
-	public static function register() {
-		register_widget( __CLASS__ );
-	}
-
-	////////////////////////////////////////////////////////////
-
-	/**
-	 * Constructs and initializes this widget
-	 */
-	public function Orbis_Stats_Widget() {
-		parent::WP_Widget( 'orbis-stats', __( 'Orbis Stats', 'orbis' ) );
+	function Orbis_Stats_Widget() {
+		parent::__construct( 'orbis-stats', __( 'Orbis - Stats', 'orbis' ) );
 	}
 
 	function widget( $args, $instance ) {
